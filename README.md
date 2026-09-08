@@ -15,7 +15,7 @@ Nesta primeira fase, o sistema permitirá:
 - consulta de saldo;
 - consulta de extrato.
 
-Também serão implementadas regras como validação de saldo, contas válidas em transferências, limite de uma conta por cliente e registro das movimentações realizadas. :contentReference[oaicite:0]{index=0}
+Também serão implementadas regras como validação de saldo, contas válidas em transferências, limite de uma conta por cliente e registro das movimentações realizadas. 
 
 ## Tecnologias
 
@@ -36,6 +36,6 @@ O PostgreSQL será executado em container Docker, enquanto a aplicação será e
 
 ## Objetivo de aprendizado
 
-A proposta desta etapa é desenvolver uma aplicação backend do zero, passando pela modelagem do domínio, persistência, implementação das regras de negócio, criação dos endpoints e testes automatizados, buscando cobertura mínima de 60%. :contentReference[oaicite:2]{index=2}
+A proposta desta etapa é desenvolver uma aplicação backend do zero, passando pela modelagem do domínio, persistência, implementação das regras de negócio, criação dos endpoints e testes automatizados, buscando cobertura mínima de 60%.
 
 > Projeto em desenvolvimento.
