@@ -5,6 +5,8 @@ import br.com.bruna.bankapi.customer.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class CustomerService {
@@ -13,5 +15,9 @@ public class CustomerService {
 
     public Customer create(Customer customer) {
         return customerRepository.save(customer);
+    }
+
+    public List<Customer> findAll() {
+        return customerRepository.findAll();
     }
 }

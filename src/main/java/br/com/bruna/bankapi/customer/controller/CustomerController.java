@@ -1,13 +1,12 @@
 package br.com.bruna.bankapi.customer.controller;
 
-import br.com.bruna.bankapi.customer.service.CustomerService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import br.com.bruna.bankapi.customer.dto.CreateCustomerRequest;
 import br.com.bruna.bankapi.customer.model.Customer;
-import org.springframework.web.bind.annotation.RequestBody;
+import br.com.bruna.bankapi.customer.service.CustomerService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -25,7 +24,10 @@ public class CustomerController {
                 request.phone()
         );
         return customerService.create(customer);
-
     }
 
+    @GetMapping
+    public List<Customer> findAll() {
+        return customerService.findAll();
+    }
 }
