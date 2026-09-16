@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RequiredArgsConstructor
 @RestController
@@ -17,17 +18,17 @@ public class CustomerController {
 
     @PostMapping
     public Customer create(@RequestBody CreateCustomerRequest request) {
-        Customer customer = new Customer(
-                request.name(),
-                request.cpf(),
-                request.email(),
-                request.phone()
-        );
+        Customer customer = new Customer(request.name(), request.cpf(), request.email(), request.phone());
         return customerService.create(customer);
     }
 
     @GetMapping
     public List<Customer> findAll() {
         return customerService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Customer findById(@PathVariable UUID id) {
+        return customerService.findById(id);
     }
 }
