@@ -1,4 +1,4 @@
-package br.com.bruna.bankapi.customer.dto;
+package br.com.bruna.bankapi.dto;
 
 public record CreateCustomerRequest(
         String name,

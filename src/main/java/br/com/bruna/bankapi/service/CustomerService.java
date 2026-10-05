@@ -1,7 +1,7 @@
-package br.com.bruna.bankapi.customer.service;
+package br.com.bruna.bankapi.service;
 
-import br.com.bruna.bankapi.customer.model.Customer;
-import br.com.bruna.bankapi.customer.repository.CustomerRepository;
+import br.com.bruna.bankapi.model.Customer;
+import br.com.bruna.bankapi.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

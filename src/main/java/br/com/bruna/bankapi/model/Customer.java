@@ -1,4 +1,4 @@
-package br.com.bruna.bankapi.customer.model;
+package br.com.bruna.bankapi.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.UUID;
+
 
 @NoArgsConstructor
 @Getter
