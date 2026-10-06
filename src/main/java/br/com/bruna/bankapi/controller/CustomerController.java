@@ -1,11 +1,8 @@
 package br.com.bruna.bankapi.controller;
 
 import br.com.bruna.bankapi.dto.CreateCustomerRequest;
-
 import br.com.bruna.bankapi.model.Customer;
-
-import br.com.bruna.bankapi.customer.service.CustomerService;
-
+import br.com.bruna.bankapi.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
