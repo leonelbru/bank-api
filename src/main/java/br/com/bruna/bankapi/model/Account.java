@@ -35,4 +35,8 @@ public class Account {
         this.customer = customer;
         this.balance = BigDecimal.ZERO;
     }
+
+    public void deposit(BigDecimal amount) {
+        balance = balance.add(amount);
+    }
 }

@@ -1,6 +1,7 @@
 package br.com.bruna.bankapi.controller;
 
 import br.com.bruna.bankapi.dto.CreateAccountRequest;
+import br.com.bruna.bankapi.dto.DepositRequest;
 import br.com.bruna.bankapi.model.Account;
 import br.com.bruna.bankapi.model.Customer;
 import br.com.bruna.bankapi.service.AccountService;
@@ -8,6 +9,7 @@ import br.com.bruna.bankapi.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -41,6 +43,13 @@ public class AccountController {
         return accountService.findById(id);
     }
 
+    @PostMapping("/{id}/deposit")
+    public Account deposit(
+            @PathVariable UUID id,
+            @RequestBody DepositRequest request
+    ) {
+        return accountService.deposit(id, request.amount());
+    }
 }
 
 

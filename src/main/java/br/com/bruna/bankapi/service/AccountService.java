@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -25,10 +26,14 @@ public class AccountService {
     }
 
     public Account findById(UUID id) {
-        return accountRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(
-                        HttpStatus.NOT_FOUND,
-                        "Account not found"
-                ));
+        return accountRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Account not found"));
+    }
+
+    public Account deposit(UUID id, BigDecimal amount) {
+        Account account = findById(id);
+        account.deposit(amount);
+        accountRepository.save(account);
+
+        return account;
     }
 }
